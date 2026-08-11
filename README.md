@@ -57,6 +57,11 @@ password: password <br />
 
 20. Now you can test the CRUD of projects
 
+# Features
+1. Create-Read-Update-Delete of Projects
+2. Filtering and Sorting of Projects
+3. Pagination
+
 
 
 
