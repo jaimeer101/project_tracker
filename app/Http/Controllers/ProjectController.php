@@ -43,21 +43,12 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit(int $id)
     {
         
-        $data = [
-            "id" => $project->id, 
-            "name" => $project->project_name, 
-            "client" => $project->client_name, 
-            "description" => $project->description, 
-            "status" => $project->status, 
-            "priority" => $project->priority, 
-            "startDate" => $project->start_date, 
-            "dueDate" => $project->due_date, 
-        ];
+        
         return Inertia::render('Project/Form', [
-            'project' => $data,
+            'id' => $id,
         ]);
     }
 

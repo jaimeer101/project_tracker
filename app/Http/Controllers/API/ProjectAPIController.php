@@ -76,9 +76,20 @@ class ProjectAPIController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $id)
     {
         //
+        $data = [
+            "id" => $id->id, 
+            "name" => $id->project_name, 
+            "client" => $id->client_name, 
+            "description" => $id->description, 
+            "status" => $id->status, 
+            "priority" => $id->priority, 
+            "startDate" => $id->start_date, 
+            "dueDate" => $id->due_date, 
+        ];
+        return response()->json($data);
     }
 
     /**
@@ -97,7 +108,7 @@ class ProjectAPIController extends Controller
             'start_date'   => $data['startDate'],
             'due_date'     => $data['dueDate'],
         ]);
-        return redirect()->route('projects.edit', ["project" => $id->id])->with('success', 'Project updated successfully!');
+        return redirect()->route('projects.edit', ["id" => $id->id])->with('success', 'Project updated successfully!');
     }
 
     /**

@@ -29,9 +29,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/projects/view', [ProjectController::class, 'index'])->name('projects.index');
     Route::get('/projects/add', [ProjectController::class, 'create'])->name('projects.create');
-    Route::get('/projects/edit/{project}', [ProjectController::class, 'edit'])->name('projects.edit');
+    Route::get('/projects/edit/{id}', [ProjectController::class, 'edit'])->name('projects.edit');
 
     Route::get('/projects', [ProjectAPIController::class, 'index'])->name('projects.api.index');
+    Route::get('/projects/{id}', [ProjectAPIController::class, 'show'])->name('projects.api.show');
     Route::post('/projects', [ProjectAPIController::class, 'store'])->name('projects.api.create');
     Route::put('/projects/{id}', [ProjectAPIController::class, 'update'])->name('projects.api.update');
     Route::delete('/projects/{id}', [ProjectAPIController::class, 'destroy'])->name('projects.api.delete');
