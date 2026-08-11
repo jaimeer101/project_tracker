@@ -1,6 +1,8 @@
 ## System Requirements
 Laravel Version : 13 <br/>
 PHP : 8.5 <br/>
+Javascript: Vue </br>
+CSS: Tailwind 4</br>
 Database : MySQL <br/>
 ## Instructions
 1. Clone the project in your local
